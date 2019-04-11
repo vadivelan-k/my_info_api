@@ -50,3 +50,13 @@ Go to root directory of the repo and run `ruby test.rb`
 
 **decrypted response:**
 `{:success=>true, :data=>{"residentialstatus"=>{"lastupdated"=>"", "source"=>"1", "classification"=>"C", "value"=>""}, "dob"=>{"lastupdated"=>"2017-12-18", "source"=>"1", "classification"=>"C", "value"=>"1974-05-11"}, "name"=>{"lastupdated"=>"2017-12-18", "source"=>"1", "classification"=>"C", "value"=>"LEE HUI LING"}, "regadd"=>{"country"=>"SG", "source"=>"1", "classification"=>"C", "building"=>"BRADDELL VIEW", "unit"=>"4", "street"=>"BRADDELL HILL", "lastupdated"=>"2017-12-19", "block"=>"10G", "postal"=>"579726", "floor"=>"5"}, "race"=>{"lastupdated"=>"2017-12-18", "source"=>"1", "classification"=>"C", "value"=>"CN"}, "sex"=>{"lastupdated"=>"2017-12-18", "source"=>"1", "classification"=>"C", "value"=>""}}}`
+
+### Trouble Shooting
+
+1. When running `ruby test.rb`. If you see a response with following error message
+
+`{"code": 401,"message": "Invalid SingPass Login", "fields": ""}`
+
+>MyInfo Api requires a valid Singpass session to return response i.e., MyInfo is validating requested NRIC has any active Singpass session.
+
+To fix this, you need to login using the NRIC(mentioned in test.rb) into Staging Singpass. After successful login, try running the same and you see the success response.
